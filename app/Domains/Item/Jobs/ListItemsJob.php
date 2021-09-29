@@ -5,7 +5,7 @@ namespace App\Domains\Item\Jobs;
 use App\Data\Item;
 use Lucid\Units\Job;
 
-class DisplayItemsJob extends Job
+class ListItemsJob extends Job
 {
     /**
      * Create a new job instance.

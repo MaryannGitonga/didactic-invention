@@ -18,5 +18,6 @@ class SaveItemFeature extends Feature
             'name' => $validated['name']
         ]);
 
+        return redirect()->route('show');
     }
 }

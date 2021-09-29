@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Features\ListItemsFeature;
+use App\Features\RenderViewFeature;
 use App\Features\SaveItemFeature;
 use Lucid\Units\Controller;
 
@@ -10,18 +11,18 @@ class ItemController extends Controller
 {
     public function index()
     {
-        return view('create');
+        return $this->serve(RenderViewFeature::class, [
+            'view' => 'create',
+        ]);
     }
 
     public function create()
     {
-        $this->serve(SaveItemFeature::class);
-        return redirect()->route('show');
+        return $this->serve(SaveItemFeature::class);
     }
 
     public function show()
     {
-        $items = $this->serve(ListItemsFeature::class);
-        return view('show', compact('items'));
+        return $this->serve(ListItemsFeature::class);
     }
 }
