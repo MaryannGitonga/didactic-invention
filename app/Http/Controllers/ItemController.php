@@ -16,7 +16,7 @@ class ItemController extends Controller
     public function create()
     {
         $this->serve(SaveItemFeature::class);
-        return back();
+        return redirect()->route('show');
     }
 
     public function show()
